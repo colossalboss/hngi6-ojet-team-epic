@@ -15,8 +15,11 @@ define(['knockout', 'ojs/ojbootstrap', 'ojs/ojresponsiveutils', 'ojs/ojresponsiv
 
       self.userName = ko.observable("");
       self.password = ko.observable("");
+      self.login = ko.observable(false);
 
       self.data = ko.observableArray()
+      self.dataFromAPI = ko.observableArray()
+
       self.pass = ko.observable(false)
 
       self.isSmall = ResponsiveKnockoutUtils.createMediaQueryObservable(
@@ -69,11 +72,43 @@ define(['knockout', 'ojs/ojbootstrap', 'ojs/ojresponsiveutils', 'ojs/ojresponsiv
           self.data().push(new User(self.userName(), self.password()));
           console.log(self.data());
           self.pass(true);
+
+          console.log(self.data()[0]["name"]);
+          let targetName = self.data()[0]["name"];
+          let targetPassword = self.data()[0]["password"];
+
+          self.dataFromAPI().forEach(item => {
+            if (item.username == targetName && item.password == targetPassword) {
+              console.log('Our User');
+              self.login(true)
+              return true;
+            }
+          })
         }else {
           alert('fill all fields');
         }
+        self.data([]);
         console.log(self.pass());
+        console.log(self.data());
       }
+
+      //fetch
+      // fetch('js/viewModels/data/data.json')
+      // .then((res) => {
+      //   return res.json();
+      // })
+      // .then((response) => {
+      //   console.log(JSON.stringify(response))
+      // })
+      // .catch(err => console.log(err));
+
+      $.getJSON('js/viewModels/data/data.json', function(data) {
+        console.log('hey');
+
+        self.dataFromAPI(data);
+        console.log(self.dataFromAPI());
+
+      })
 
       // Below are a set of the ViewModel methods invoked by the oj-module component.
       // Please reference the oj-module jsDoc for additional information.

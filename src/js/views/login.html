@@ -2,7 +2,7 @@
  Copyright (c) 2014, 2019, Oracle and/or its affiliates.
  The Universal Permissive License (UPL), Version 1.0
  -->
-<div class="oj-hybrid-padding">
+<div class="oj-hybrid-padding" data-bind="ifnot: login">
   <h1 class="big-text">Please Login</h1>
   <div class="form-div">
     <form data-bind="submit: submitForm">
@@ -14,4 +14,15 @@
         </oj-form-layout>
       </form>
   </div>
+</div>
+
+<div data-bind="if: login">
+  <div>
+    <h1>Your Dashbord</h1>
+  </div>
+  <div>
+    <h2>Welcome <span data-bind="text: userName"></span></h2>
+  </div>
+  <h2>Name: <span data-bind="text: login"></span></h2>
+  <h2>Username: <span></span></h2>
 </div>

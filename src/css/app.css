@@ -11,7 +11,7 @@
 }
 
 .con {
-  
+
   text-align: center;
 }
 
@@ -22,5 +22,22 @@
 .btn {
   text-align: center;
   border-radius: 4px;
-  margin:
+}
+
+.top-div {
+  display: flex;
+  align-items: center;
+}
+
+.dashboard {
+  width: 80%;
+}
+
+.out {
+  width: 20%;
+}
+
+.log-out {
+  display: flex;
+  align-items: flex-end;
 }

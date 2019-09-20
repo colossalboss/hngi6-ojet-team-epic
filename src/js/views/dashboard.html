@@ -2,9 +2,33 @@
  Copyright (c) 2014, 2019, Oracle and/or its affiliates.
  The Universal Permissive License (UPL), Version 1.0
  -->
-<div class="oj-hybrid-padding">
-  <h1>Dashboard Content Area</h1>
-  <div>
-      To change the content of this section, you will make edits to the dashboard.html file located in the /js/views folder.
+ <div class="oj-hybrid-padding" data-bind="ifnot: login">
+    <h1 class="big-text">Please Login</h1>
+    <div class="form-div">
+      <form data-bind="submit: submitForm">
+          <oj-form-layout  direction="row" class="con">
+            <oj-input-text data-bind="textInput: userName, event: {blur: isValid}" clear-icon="always" label-hint="Username" value="value text"></oj-input-text>
+            <oj-input-text clear-icon="always" data-bind="textInput: password, event: {blur: isValid}" label-hint="Password" value="value text"></oj-input-text>
+
+            <input type="submit" class="btn" value="Login" data-bind="enable: pass">
+          </oj-form-layout>
+        </form>
+    </div>
   </div>
-</div>
+
+  <div class="oj-hybrid-padding" data-bind="if: login">
+    <div class="top-div">
+      <div class="dashboard">
+          <h1>Dashbord Area</h1>
+      </div>
+      <div class="out">
+          <oj-button class="log-out">Log Out</oj-button>
+        </div>
+    </div>
+    <hr>
+    <div>
+      <h2>Welcome <strong><span data-bind="text: userName"></span></strong></h2>
+    </div>
+    <h4>Name: <span data-bind="text: fullName"></span></h4>
+    <h4>Username: <span data-bind="userName"></span></h4>
+  </div>
