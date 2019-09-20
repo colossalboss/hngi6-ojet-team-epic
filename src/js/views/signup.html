@@ -1,0 +1,20 @@
+<!--
+ Copyright (c) 2014, 2019, Oracle and/or its affiliates.
+ The Universal Permissive License (UPL), Version 1.0
+ -->
+<div class="oj-hybrid-padding form-div">
+  <h1 class="big-text">Please Sign Up</h1>
+  <form action="" data-bind="submit: submitForm">
+    <oj-form-layout  direction="row" class="con">
+      <oj-input-text class="field" clear-icon="always" data-bind="textInput: fullName, event: {blur: isValid}" label-hint="Full Name" value="value text" ></oj-input-text>
+      <oj-input-text class="field" clear-icon="always" data-bind="textInput: userName, event: {blur: isValid}" label-hint="Username" value="value text"></oj-input-text>
+      <oj-input-text class="field" clear-icon="always" data-bind="textInput: email, event: {blur: isValid}" label-hint="Email" value="value text"></oj-input-text>
+      <oj-input-text class="field" clear-icon="always" data-bind="textInput: track, event: {change: isValid}" label-hint="Track" value="value text"></oj-input-text>
+      <oj-input-text class="field" clear-icon="always" type="number" data-bind="textInput: phone, event: {blur: isValid}" label-hint="Phone" value="value text"></oj-input-text>
+      <oj-input-text class="field" clear-icon="always" data-bind="textInput: location, event: {blur: isValid}" label-hint="Location" value="value text"></oj-input-text>
+      <oj-input-text class="field" clear-icon="always" type="password" data-bind="textInput: password, event: {blur: isValid}" label-hint="Password" value="value text"></oj-input-text>
+      <input type="submit"  class="btn" value="Submit" data-bind="enable: pass">
+    </oj-form-layout>
+  </form>
+
+</div>

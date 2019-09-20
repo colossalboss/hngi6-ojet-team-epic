@@ -1,0 +1,17 @@
+<!--
+ Copyright (c) 2014, 2019, Oracle and/or its affiliates.
+ The Universal Permissive License (UPL), Version 1.0
+ -->
+<div class="oj-hybrid-padding">
+  <h1 class="big-text">Please Login</h1>
+  <div class="form-div">
+    <form data-bind="submit: submitForm">
+        <oj-form-layout  direction="row" class="con">
+          <oj-input-text data-bind="textInput: userName, event: {blur: isValid}" clear-icon="always" label-hint="Username" value="value text"></oj-input-text>
+          <oj-input-text clear-icon="always" data-bind="textInput: password, event: {blur: isValid}" label-hint="Password" value="value text"></oj-input-text>
+
+          <input type="submit" class="btn" value="Login" data-bind="enable: pass">
+        </oj-form-layout>
+      </form>
+  </div>
+</div>
