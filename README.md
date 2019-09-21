@@ -16,7 +16,7 @@ To run the project run
 * npm install -g @oracle/ojet-cli
 * ojet serve
 
-Currently I am fetching a local JSON data that looks like this
+Currently I am fetching a local JSON data, can be seen below
 
 [
   {
