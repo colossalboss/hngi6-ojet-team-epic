@@ -24,6 +24,12 @@
   border-radius: 4px;
 }
 
+.btn:hover {
+  background-color: #000;
+  color: #fff;
+  cursor: pointer;
+}
+
 .top-div {
   display: flex;
   align-items: center;
@@ -41,3 +47,5 @@
   display: flex;
   align-items: flex-end;
 }
+
+
